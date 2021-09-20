@@ -1,0 +1,14 @@
+{
+    "name": "Preenchedor de Faltas",
+    "action": {
+        "default_popup": "index.html"
+    },
+    "manifest_version": 3,
+    "version": "0.1",
+    "description": "Preenche as faltas no SIGAA!",
+    "permissions": [
+      "tabs",
+      "activeTab",
+      "scripting"
+    ]
+  }
