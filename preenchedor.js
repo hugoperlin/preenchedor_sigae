@@ -54,7 +54,7 @@ function preencheFaltas(){
           });
         }
       );
-      alert("Clique uma vez no dia a ser preenchido!\n Depois novamente, mas com dois cliques!");
+      alert("Dois cliques no dia que deseja lançar as faltas!");
 }
 
 
