@@ -10,6 +10,8 @@ Extensão do Google Chrome para auxiliar o preenchimento das faltas no sistema a
 4. Selecione a pasta onde você descompactou os arquivos
 5. Clique no ícone de extensões e clique no pin, para manter a extensão na sua barra de tarefas
 
+[Ver o gif](https://github.com/hugoperlin/preenchedor_faltas/blob/main/imgs/instalacao.apng?raw=true).
+
 # Uso
 
 A extensão foi pensada para ser utilizada no caso do professor fazer o controle de
