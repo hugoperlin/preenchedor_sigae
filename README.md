@@ -29,3 +29,4 @@ faltas em uma planilha eletrônica, onde o número de faltas é lançado. Lembra
 8. Confira os valores
 9. Clique em salvar  
 
+[Ver o gif](https://github.com/hugoperlin/preenchedor_faltas/blob/main/imgs/exemplolancamento.gif?raw=true).
