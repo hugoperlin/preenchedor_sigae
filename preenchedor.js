@@ -2,31 +2,27 @@ document.getElementById("btn").addEventListener("click",()=>{
     preencheFaltas();
 })
 
-function getDiasAulas(x1){
+function preenchedor(dados){
     var tabela = document.getElementsByTagName("table")[0];
-    var header = tabela.getElementsByTagName("thead")[0];
     
-    function clicou(evt,x2){
-        let colunaAula = evt.target;
-        let aula = colunaAula.className.split(" ")[0];
-        let celulas = tabela.getElementsByClassName("aula_"+aula);
-        
-        if(celulas.length != x2.length){
-            alert("Número insuficiente de faltas!");
-            return;
-        }
+    let checks = tabela.querySelectorAll('input[type="checkbox"]');
 
-        for(let i=0;i<celulas.length;i++){        
-            celulas[i].innerHTML = x2[i];
-        }
+    for(let i=0;i<checks.length;i++){
+        checks[i].click();
+        checks[i].click();    
+    }
+    
+    let inputs = tabela.querySelectorAll('input[type="number"]');
+
+    if(inputs.length != dados.length){
+        alert("Número insuficiente de faltas!");
+        return;
     }
 
-    for(let i=0;i<header.children.length;i++){
-        header.children[i].addEventListener("dblclick",(evt)=>{clicou(evt,x1);});
+    for(let i=0;i<inputs.length;i++){ 
+        inputs[i].value = dados[i];
     }
-
-    
-
+    alert("Feito!");
 }
 
 function preencheFaltas(){
@@ -37,8 +33,7 @@ function preencheFaltas(){
         dados = dados.slice(0,dados.length-1);
     }
     
-    if(dados.length <= 1){
-        console.log("aqui...");
+    if(dados.length < 1){
         alert("Não inseriu as faltas!");
         return;
     }
@@ -54,7 +49,6 @@ function preencheFaltas(){
           });
         }
       );
-      alert("Dois cliques no dia que deseja lançar as faltas!");
 }
 
 

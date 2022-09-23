@@ -5,7 +5,7 @@
     },
     "manifest_version": 3,
     "version": "0.1",
-    "description": "Preenche as faltas no SIGAA!",
+    "description": "Preenche as faltas no Sigae!",
     "permissions": [
       "tabs",
       "activeTab",
