@@ -18,7 +18,7 @@ Lembrando que a ordem e quantidade de alunos deve ser a mesma que aquela apresen
 
 ## Lançando as faltas
 
-1. Abra a sua planilha de controle, e copie a coluna das faltas;
+1. Abra a sua planilha de controle, e copie a coluna das matriculas e faltas; DEVE SER NESSA ORDEM!!
 2. Acesse o Sigae e abra a tela de lançamento da frequência;
 3. Clique no ícone da extensão e cole os dados copiados da planilha
 4. Clique no botão "Preencher"
