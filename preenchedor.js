@@ -1,6 +1,70 @@
 document.getElementById("btn").addEventListener("click",()=>{
     preencheFaltas();
-})
+});
+
+document.getElementById("btnCopiar").addEventListener("click",()=>{
+    copiador();
+});
+
+function copiar(){
+    var linhas = document.getElementsByTagName("tbody")[0].getElementsByTagName("tr");
+
+    var dados="";
+
+    for(let i=0;i<linhas.length;i++){
+        
+        var colunas = linhas[i].getElementsByTagName("td");
+
+        for(let i=0;i<4;i++){
+            var texto = colunas[i].innerText;
+            dados = dados+texto+"\t";
+        }
+        dados = dados+"\n";
+        
+    }
+    
+//Create a textbox field where we can insert text to. 
+var copyFrom = document.createElement("textarea");
+
+//Set the text content to be the text you wished to copy.
+copyFrom.textContent = dados;
+
+//Append the textbox field into the body as a child. 
+//"execCommand()" only works when there exists selected text, and the text is inside 
+//document.body (meaning the text is part of a valid rendered HTML element).
+document.body.appendChild(copyFrom);
+
+//Select all the text!
+copyFrom.select();
+
+//Execute command
+document.execCommand('copy');
+
+//(Optional) De-select the text using blur(). 
+copyFrom.blur();
+
+//Remove the textbox field from the document.body, so no other JavaScript nor 
+//other elements can get access to this.
+document.body.removeChild(copyFrom);
+
+alert("Copiado!");
+}
+
+function copiador(){
+    chrome.tabs.query(
+        { active: true, windowId: chrome.windows.WINDOW_ID_CURRENT },
+        function(tabs) {
+    
+          chrome.scripting.executeScript({target:{tabId: tabs[0].id, allFrames: true}, func: copiar, args:[]},
+            (injectionResults) => {
+                for (const frameResult of injectionResults)
+                  console.log('Frame Title: ' + frameResult.result);
+          });
+        }
+      );
+}
+
+
 
 function preenchedor(dados){
     
